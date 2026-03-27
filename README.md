@@ -17,3 +17,7 @@ Technologies Used
 - CSS
 - JavaScript
 - OpenWeather API
+
+## Live Demo
+
+[Click here to see the website](https://weather-app-abc123.netlify.app)
