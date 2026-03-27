@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherPro - Premium Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Dynamic Background -->
+    <div class="bg-gradient" id="bgGradient"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <i class="fas fa-cloud-sun-rain header-icon"></i>
+                <div>
+                    <h1>WeatherPro</h1>
+                    <p>Real-time weather updates</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="geoBtn" class="geo-btn" title="Use my location">
+                    <i class="fas fa-location-arrow"></i>
+                </button>
+                <button id="unitToggle" class="unit-btn">
+                    <span id="unitText">°C</span>
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Search -->
+        <section class="search-section glass-card">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="cityInput" placeholder="Search city..." value="">
+                <button id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Error Message -->
+        <div id="errorMsg" class="error-toast"></div>
+
+        <!-- Current Weather -->
+        <section class="current-weather glass-card" id="currentWeather">
+            <div class="location-header">
+                <h2 id="cityName">--</h2>
+                <span id="countryFlag" class="country-flag">--</span>
+                <div id="dateTime">--</div>
+            </div>
+            
+            <div class="weather-main">
+                <div class="weather-icon-container">
+                    <img id="weatherIcon" src="" alt="Weather">
+                    <div class="weather-status" id="weatherStatus"></div>
+                </div>
+                <div class="temperature">
+                    <span id="currentTemp">--</span>
+                    <span class="unit" id="currentUnit">°C</span>
+                </div>
+                <p id="weatherDesc">--</p>
+            </div>
+
+            <!-- Highlights -->
+            <div class="highlights">
+                <div class="highlight-item">
+                    <i class="fas fa-eye"></i>
+                    <span class="label">Visibility</span>
+                    <span id="visibility" class="value">--</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-tint-drop"></i>
+                    <span class="label">Humidity</span>
+                    <span id="humidity" class="value">--</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-wind"></i>
+                    <span class="label">Wind</span>
+                    <span id="windSpeed" class="value">--</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-thermometer-half"></i>
+                    <span class="label">Feels like</span>
+                    <span id="feelsLike" class="value">--</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hourly Forecast -->
+        <section class="hourly-section">
+            <h3>Hourly Forecast</h3>
+            <div class="hourly-container" id="hourlyForecast">
+                <!-- Dynamic hourly forecast -->
+            </div>
+        </section>
+
+        <!-- 5-Day Forecast -->
+        <section class="forecast-section">
+            <h3>5-Day Forecast</h3>
+            <div class="forecast-grid" id="fiveDayForecast">
+                <!-- Dynamic 5-day forecast -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <div class="loading-text">Fetching weather data...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
